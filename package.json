@@ -1,0 +1,26 @@
+{
+  "name": "quan-ly-ho-so-nvqs-web",
+  "version": "2.0.0",
+  "description": "He thong quan ly ho so NVQS - kien truc web day du: SQLite that, dang nhap + phan quyen, Vite+React",
+  "main": "server/index.js",
+  "bin": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build:client": "cd client && npm install --no-audit --no-fund && npm run build",
+    "build:win": "npm run build:client && pkg . --targets node22-win-x64 --output dist/QuanLyHoSoNVQS.exe"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  },
+  "pkg": {
+    "assets": [
+      "client/dist/**/*",
+      "data/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.21.0"
+  }
+}
